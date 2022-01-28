@@ -1,25 +1,7 @@
-# Task 10:
+# Task 10
 
-## Overview :
+In today's Task you are going to solve the required problems inside your javascript file.
 
+Your code should pass all test.
 
-### Set up your Github Repository
-
-- Create a new repository called `Regex-Recursion` from this template
-- Clone this repo to your local machine.
-- install package dependencies run `npm install`
-- Checkout a new branch called `regex` for Regex task.
-- Checkout a new branch called `recursion` for Recursion task.
-- Open it in VS code.
-
-
-### You will find the instructions inside each folder.
-
-
-## Submission Instructions:
-- When your work is complete and ready for submission, push to the `regex` and `recursion` branches.
-- Create two pull requests one for each branch.
-- Submit the pull requests links.
-- Merge `regex` and `recursion` with the main branch.
-- What observations or questions do you have about what you’ve learned so far?
-- How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?
+To run all the tests `npm test`
