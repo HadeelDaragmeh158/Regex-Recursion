@@ -1,40 +1,26 @@
 'use strict';
 
 
-
 /* Write a function that take a string and return true if the string only contain uppercase and lowercase
 characters (no numbers and symbols) and it should end with capital A else return false */
 
 function capitalA(s) {
-    // Add your logic.
-    let reg = /[A-Z]/g;
-    let reg2 =/[a-z]/g;
-    let reg3 =/A$/g;
-    if (reg.test(s)&&reg2.test(s)&&reg3.test(s))
-    {
-      let reg4=/[0-9]/;
-      let reg5= /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-      if (reg4.test(s)||reg5.test(s))
-      {
-        return false ;
-      }
-      else   {
-          return true;
-    }
-    
-    }
+    let reg3 = /(A)$/g;
+    let reg4 = /[0-9]/;
+    return (!(reg4.test(s)) && reg3.test(s));
 }
-
 
 /* Write a function that take a string and return true if the the sting is following the emails pattern
 which end with io (example@example.io) */
 
 function ioEmail(email) {
     // Add your logic.
-    let reg = /(.io)\g/;
-    let res = reg.test(email);
+    let reg = /(.io)$/g;
+    let wordEnding = /\W/g;
+    let res = (reg.test(email)&& email.match(wordEnding).length ==2) ;
     return res;
 }
+
 /* You have a text that contain image names with their extention you need to write a function to 
 find all images in that text and return their names and extention in an array 
 
@@ -43,21 +29,19 @@ required extention are jpg, jpeg and png.
 */
 
 function imagesSearcher(text) {
-     
-let nar=tr.split(" ");
-console.log(nar);
-let newArr=[];
-var reg=/\.(jpeg|jpg|png|gif)/g;
- 
-for(let i=0; i<nar.length;i++){
-let str =nar[i];
 
- if(reg.test(str)){
-   newArr.push(str);
-   }}
-
-   return newArr;
+    let nar = text.split(" ");
+    let newArr = [];
+var reg = /.(jpeg|jpg|png)/g;
+    for (let i = 0; i < nar.length; i++) {
+        let str = nar[i];
+        if (reg.test(str)) {
+            newArr.push(str);
+        }
+    }
+    return newArr;
 }
+
 
 
 describe("Test capitalA", () => {
